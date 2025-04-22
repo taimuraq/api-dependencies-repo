@@ -1,5 +1,6 @@
 [
   {
+    "serviceName": "shopper API",
     "externalCall": {
       "path": "/users/{id}",
       "method": "GET",
