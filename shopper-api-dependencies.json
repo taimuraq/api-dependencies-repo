@@ -1,0 +1,27 @@
+[
+  {
+    "externalCall": {
+      "path": "/users/{id}",
+      "method": "GET",
+      "service": "userdataapi"
+    },
+    "originatingEndpoints": [
+      {
+        "path": "CartService.getCartById",
+        "api": "GET /cart/c1",
+        "internalTrace": [
+          "CartService.getCartById",
+          "RestClientService.getUser"
+        ]
+      },
+      {
+        "path": "CartService.getCartById",
+        "api": "GET /cart/c1",
+        "internalTrace": [
+          "CartService.getCartById",
+          "RestClientService.getUser"
+        ]
+      }
+    ]
+  }
+]
