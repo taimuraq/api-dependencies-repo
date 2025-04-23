@@ -1,7 +1,22 @@
-
 [
   {
-    "serviceName": "shopper API",
+    "externalCall": {
+      "path": "/companysettings/unit-id/{id}",
+      "method": "GET",
+      "service": "userdataapi"
+    },
+    "originatingEndpoints": [
+      {
+        "path": "CartService.createCart",
+        "api": "POST /cart",
+        "internalTrace": [
+          "CartService.createCart",
+          "RestClientService.getCompanySettings"
+        ]
+      }
+    ]
+  },
+  {
     "externalCall": {
       "path": "/users/{id}",
       "method": "GET",
@@ -21,6 +36,7 @@
         "api": "POST /cart",
         "internalTrace": [
           "CartService.createCart",
+          "RestClientService.getCompanySettings",
           "RestClientService.getUser"
         ]
       }
