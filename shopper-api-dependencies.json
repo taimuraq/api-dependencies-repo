@@ -1,3 +1,4 @@
+
 [
   {
     "serviceName": "shopper API",
@@ -16,10 +17,10 @@
         ]
       },
       {
-        "path": "CartService.getCartById",
-        "api": "GET /cart/c1",
+        "path": "CartService.createCart",
+        "api": "POST /cart",
         "internalTrace": [
-          "CartService.getCartById",
+          "CartService.createCart",
           "RestClientService.getUser"
         ]
       }
