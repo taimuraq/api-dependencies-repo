@@ -1,4 +1,5 @@
 [
+  {"serviceName": "shopper API"},
   {
     "externalCall": {
       "path": "/companysettings/unit-id/{id}",
