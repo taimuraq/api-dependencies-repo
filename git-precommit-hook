@@ -1,0 +1,35 @@
+#!/bin/bash
+
+echo "[hook] Cleaning and building project..."
+./mvnw clean package -DskipTests || exit 1
+echo "[hook] Cleaning and building project..."
+echo "[hook] Starting Spring Boot app..."1
+./mvnw spring-boot:start || exit 1
+echo "[hook] Starting Spring Boot app..."
+# Wait for app to be ready (simple ping to health endpoint)
+echo "[hook] Waiting for app to be ready..."
+for i in {1..10}; do ready (simple ping to health endpoint)
+  if curl -sf http://localhost:8080/actuator/health > /dev/null; then
+    echo "[hook] App is up!"
+    break -sf http://localhost:8080/actuator/health > /dev/null; then
+  elseho "[hook] App is up!"
+    echo "[hook] Still waiting..."
+    sleep 2
+  fiecho "[hook] Still waiting..."
+donesleep 2
+  fi
+echo "[hook] Generating OpenAPI spec..."
+./mvnw springdoc-openapi:generate verify || {
+  echo "[hook] Failed to generate OpenAPI spec"
+  ./mvnw spring-boot:stopgenerate verify || {
+  exit 1[hook] Failed to generate OpenAPI spec"
+}git/hooks/pre-commit
+
+echo "[hook] Stopping Spring Boot app..."
+./mvnw spring-boot:stop
+
+
+echo "[hook] Staging updated openapi.yaml..."
+git add openapi.yaml
+
+echo "[hook] openapi.yaml generated, staged, and ready to commit."
