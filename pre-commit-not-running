@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "[hook] Compiling project..."
+./mvnw compile -DskipTests || exit 1
+
+echo "[hook] Generating openapi.yaml..."
+./mvnw springdoc-openapi:generate || exit 1
+
+echo "[hook] Staging updated openapi.yaml..."
+git add openapi.yaml
+
+echo "[hook] ✅ openapi.yaml generated and staged."
