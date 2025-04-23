@@ -104,8 +104,9 @@ When you create a pull request to the main branch, a GitHub Action will automati
 
 1. Run OpenAPI specification diff using oasdiff
 2. Send the spec diff and dependencies JSON to OpenAI with a curated prompt
-3. Generate an impact analysis report
-4. Add the analysis as a comment to your PR
+3. The prompt is modelled after Model Context Protocol
+4. Generate an impact analysis report
+5. Add the analysis as a comment to your PR
 
 This helps reviewers understand the potential impact of your API changes on dependent services.
 
